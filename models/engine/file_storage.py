@@ -70,11 +70,11 @@ class FileStorage:
         self.reload()
 
     def get(self, cls, id):
+        newobj = {}
         for key, value in self.__objects.items():
             if cls == value.__class__ and id == value.id:
-                return value
-            else:
-                return None
+                newobj[key] = value
+        return newobj
                 
                    
 
